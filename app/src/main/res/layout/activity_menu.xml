@@ -55,7 +55,7 @@
 
         <RelativeLayout
             android:id="@+id/box1"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:background="@drawable/containter_background"
@@ -81,7 +81,7 @@
                 android:id="@+id/cross1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="75dp"
                 android:layout_toRightOf="@+id/containterName1"
                 android:src="@mipmap/cross"
                 android:visibility="visible"></ImageView>
@@ -90,7 +90,7 @@
                 android:id="@+id/check1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="75dp"
                 android:layout_toRightOf="@+id/containterName1"
                 android:src="@mipmap/check"
                 android:visibility="gone"></ImageView>
@@ -99,7 +99,7 @@
 
         <RelativeLayout
             android:id="@+id/content1"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/box1"
             android:layout_centerHorizontal="true"
@@ -191,8 +191,8 @@
 
 
         <RelativeLayout
-            android:id="@+id/box2"
-        android:layout_width="wrap_content"
+        android:id="@+id/box2"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:padding="16dp"
@@ -220,7 +220,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/cross"
             android:layout_toRightOf="@+id/containterName2"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="75dp"
             android:visibility="gone"></ImageView>
         <ImageView
             android:id="@+id/check2"
@@ -228,12 +228,12 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/check"
             android:layout_toRightOf="@+id/containterName2"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="75dp"
             android:visibility="visible"></ImageView>
     </RelativeLayout>
         <RelativeLayout
             android:id="@+id/content2"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/box2"
             android:layout_centerHorizontal="true"
@@ -324,7 +324,7 @@
 
     <RelativeLayout
         android:id="@+id/box3"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:padding="16dp"
@@ -352,7 +352,7 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/cross"
             android:layout_toRightOf="@+id/containterName3"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="75dp"
             android:visibility="visible"></ImageView>
         <ImageView
             android:id="@+id/check3"
@@ -360,19 +360,19 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/check"
             android:layout_toRightOf="@+id/containterName3"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="75dp"
             android:visibility="gone"></ImageView>
     </RelativeLayout>
         <RelativeLayout
             android:id="@+id/content3"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/box3"
             android:layout_centerHorizontal="true"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:background="@drawable/containter_background"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/contentShape3"

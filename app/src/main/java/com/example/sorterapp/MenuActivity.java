@@ -154,11 +154,11 @@ public class MenuActivity extends AppCompatActivity {
             content2.setVisibility(View.GONE);
             content3.setVisibility(View.GONE);
 
-            content1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.selected_container_background));
+            content1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.background_down_corners));
             content2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
             content3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
 
-            box1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.selected_container_background));
+            box1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.background_up_corners));
             box2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
             box3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
 
@@ -240,11 +240,11 @@ public class MenuActivity extends AppCompatActivity {
             content3.setVisibility(View.GONE);
 
             content1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
-            content2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.selected_container_background));
+            content2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.background_down_corners));
             content3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
 
             box1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
-            box2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.selected_container_background));
+            box2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.background_up_corners));
             box3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
 
             cross1.setImageResource(R.mipmap.cross);
@@ -326,10 +326,10 @@ public class MenuActivity extends AppCompatActivity {
 
             content1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
             content2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
-            content3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.selected_container_background));
+            content3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.background_down_corners));
             box1.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
             box2.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.containter_background));
-            box3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.selected_container_background));
+            box3.setBackground(getApplicationContext().getResources().getDrawable(R.drawable.background_up_corners));
 
             cross1.setImageResource(R.mipmap.cross);
             cross2.setImageResource(R.mipmap.cross);
