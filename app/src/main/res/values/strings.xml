@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Sortirka</string>
+
+    <string name="shape_prompt">Odaberi oblik</string>
+
+    <string-array name="shape_arrays">
+        <item>Odaberi oblik</item>
+        <item>Kocka</item>
+        <item>Piramida</item>
+        <item>Kugla</item>
+        <item>Stožac</item>
+        <item>Kvadar</item>
+    </string-array>
+
+    <string name="color_prompt">Odaberi boju</string>
+
+    <string-array name="color_arrays">
+        <item>Odaberi boju</item>
+        <item>Crvena</item>
+        <item>Plava</item>
+        <item>Žuta</item>
+        <item>Zelena</item>
+        <item>Ljubičasta</item>
+    </string-array>
+
+
+</resources>

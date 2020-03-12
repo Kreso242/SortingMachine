@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Box2"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ferit"
+            android:layout_alignParentRight="true">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/box2Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kutija 2:"
+            android:textSize="28sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"></TextView>
+
+        <RelativeLayout
+            android:id="@+id/box2Shape"
+            android:layout_below="@+id/box2Text"
+            android:layout_width="345dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/containter_background"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/idShape2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Oblik:"
+                android:textSize="22sp"
+                android:layout_centerVertical="true">
+
+            </TextView>
+            <Spinner
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/idShape2"
+                android:prompt="@string/shape_prompt"
+                android:entries="@array/shape_arrays"
+                android:layout_centerInParent="true">
+            </Spinner>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/box2Color"
+            android:layout_below="@+id/box2Shape"
+            android:layout_width="345dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="70dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/containter_background"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/idColor2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Boja:"
+                android:textSize="22sp"
+                android:layout_centerVertical="true">
+
+            </TextView>
+            <Spinner
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/idColor2"
+                android:prompt="@string/color_prompt"
+                android:entries="@array/color_arrays"
+                android:layout_centerInParent="true">
+            </Spinner>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/box2Weight"
+            android:layout_below="@+id/box2Color"
+            android:layout_width="345dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:padding="16dp"
+            android:background="@drawable/containter_background">
+            <TextView
+                android:id="@+id/idWeight2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="Masa(g):"
+                android:textSize="22sp"
+                android:layout_centerVertical="true">
+
+            </TextView>
+            <EditText
+                android:id="@+id/idMinWeight2"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/idWeight2"
+                android:hint="min(g)"
+                android:layout_centerInParent="true"
+                android:inputType="number"
+                android:textSize="20sp"
+                >
+            </EditText>
+            <TextView
+                android:id="@+id/do2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:text="do"
+                android:layout_toRightOf="@id/idMinWeight2"
+                android:layout_centerVertical="true">
+            </TextView>
+            <EditText
+                android:id="@+id/idMaxWeight2"
+                android:textAlignment="center"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/do2"
+                android:hint="max(g)"
+                android:layout_centerInParent="true"
+                android:inputType="number"
+                android:textSize="20sp"
+                >
+            </EditText>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/containter_background"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Pohrani"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:padding="16dp"
+        android:layout_marginBottom="10dp"></Button>
+
+</RelativeLayout>
