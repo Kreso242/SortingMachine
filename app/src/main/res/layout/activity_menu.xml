@@ -25,6 +25,7 @@
     </ImageView>
 
 <RelativeLayout
+    android:id="@+id/boxLayout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@color/white"
@@ -221,7 +222,7 @@
             android:src="@mipmap/cross"
             android:layout_toRightOf="@+id/containterName2"
             android:layout_marginLeft="75dp"
-            android:visibility="gone"></ImageView>
+            android:visibility="visible"></ImageView>
         <ImageView
             android:id="@+id/check2"
             android:layout_width="wrap_content"
@@ -229,7 +230,7 @@
             android:src="@mipmap/check"
             android:layout_toRightOf="@+id/containterName2"
             android:layout_marginLeft="75dp"
-            android:visibility="visible"></ImageView>
+            android:visibility="gone"></ImageView>
     </RelativeLayout>
         <RelativeLayout
             android:id="@+id/content2"
@@ -372,7 +373,7 @@
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
             android:background="@drawable/containter_background"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/contentShape3"
@@ -435,6 +436,27 @@
     </RelativeLayout>
 
 </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvDeviceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sortLayout"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:text="">
+    </TextView>
+    <TextView
+        android:id="@+id/tvDeviceAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sortLayout"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/black"
+        android:text="">
+    </TextView>
     <RelativeLayout
         android:id="@+id/sortLayout"
         android:layout_width="wrap_content"
@@ -447,7 +469,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/containter_background"
         android:layout_marginBottom="10dp"
-        >
+        android:onClick="sort">
         <ImageView
             android:id="@+id/containterImage4"
             android:layout_width="wrap_content"

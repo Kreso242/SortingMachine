@@ -3,18 +3,21 @@ package com.example.sorterapp;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import io.realm.Realm;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -61,6 +64,7 @@ public class MenuActivity extends AppCompatActivity {
     private TextView contentWeight2_2;
     private TextView contentWeight3_3;
 
+    private String bluetoothData="";
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -117,22 +121,53 @@ public class MenuActivity extends AppCompatActivity {
         contentWeight1_1=findViewById(R.id.contentWeight1_1);
         contentWeight2_2=findViewById(R.id.contentWeight2_2);
         contentWeight3_3=findViewById(R.id.contentWeight3_3);
+
+        getBoxData();
+
     }
+
+    private void getBoxData() {
+        Intent intent=getIntent();
+        String dataBox1=intent.getStringExtra("box1Data");
+        String dataBox2=intent.getStringExtra("box2Data");
+        String dataBox3=intent.getStringExtra("box3Data");
+
+
+        if(dataBox1==null) {
+            dataBox1 = "";
+        }
+        if(dataBox2==null) {
+            dataBox2 = "";
+        }
+        if(dataBox3==null) {
+            dataBox3 = "";
+        }
+
+
+
+        bluetoothData=bluetoothData+dataBox1+dataBox2+dataBox3;
+        Toast.makeText(getApplicationContext(),bluetoothData,Toast.LENGTH_SHORT).show();
+
+    }
+
 
     public void openBox3(View view) {
         Intent intent = new Intent(MenuActivity.this, Box3.class);
+        intent.putExtra("bluetoothData",bluetoothData);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void openBox2(View view) {
         Intent intent = new Intent(MenuActivity.this, Box2.class);
+        intent.putExtra("bluetoothData",bluetoothData);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void openBox1(View view) {
         Intent intent = new Intent(MenuActivity.this, Box1.class);
+        intent.putExtra("bluetoothData",bluetoothData);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
@@ -386,5 +421,9 @@ public class MenuActivity extends AppCompatActivity {
             contentColor3_3.setTextColor(Color.parseColor("#000000"));
             contentWeight3_3.setTextColor(Color.parseColor("#000000"));
         }
+    }
+
+    public void sort(View view) {
+        Toast.makeText(getApplicationContext(),bluetoothData,Toast.LENGTH_SHORT).show();
     }
 }
