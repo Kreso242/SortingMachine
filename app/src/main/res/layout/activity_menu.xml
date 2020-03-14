@@ -437,6 +437,7 @@
 
 </RelativeLayout>
 
+    <!--
     <TextView
         android:id="@+id/tvDeviceName"
         android:layout_width="wrap_content"
@@ -457,6 +458,7 @@
         android:textColor="@color/black"
         android:text="">
     </TextView>
+    -->
     <RelativeLayout
         android:id="@+id/sortLayout"
         android:layout_width="wrap_content"

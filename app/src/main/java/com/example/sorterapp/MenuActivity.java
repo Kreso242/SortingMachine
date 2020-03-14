@@ -424,6 +424,9 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void sort(View view) {
-        Toast.makeText(getApplicationContext(),bluetoothData,Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+        intent.putExtra("bluetoothData",bluetoothData);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
