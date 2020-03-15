@@ -56,21 +56,21 @@ public class Box1 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Unesi maksimalnu masu!", Toast.LENGTH_SHORT).show();
         else {
             if (shape && color && maxWeightBool)
-                dataBox1 = "&B1/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox1 = "B1/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (!shape && color && maxWeightBool)
-                dataBox1 = "&B1/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox1 = "B1/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (shape && !color && maxWeightBool)
-                dataBox1 = "&B1/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox1 = "B1/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (shape && color && !maxWeightBool)
-                dataBox1 = "&B1/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
+                dataBox1 = "B1/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
             else if (!shape && !color && maxWeightBool)
-                dataBox1 = "&B1/"+"X" + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox1 = "B1/"+"X" + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (!shape && color && !maxWeightBool)
-                dataBox1 = "&B1/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
+                dataBox1 = "B1/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
             else if (shape && !color && !maxWeightBool)
-                dataBox1 = "&B1/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X" + "/" + "X";
+                dataBox1 = "B1/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X" + "/" + "X";
             else
-                dataBox1 ="&B1/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
+                dataBox1 ="B1/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
             bluetoothData=bluetoothData+dataBox1;
 

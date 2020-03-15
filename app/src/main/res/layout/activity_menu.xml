@@ -21,421 +21,421 @@
         android:layout_height="wrap_content"
         android:src="@mipmap/ferit"
         android:layout_alignParentRight="true"
-       >
+        >
     </ImageView>
 
-<RelativeLayout
-    android:id="@+id/boxLayout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:layout_below="@+id/menuText"
-    >
-
     <RelativeLayout
-        android:id="@+id/containterOne"
-        android:layout_width="match_parent"
+        android:id="@+id/boxLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="openBox1"
+        android:background="@color/white"
+        android:layout_below="@+id/menuText"
         >
 
         <RelativeLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/containterOne"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"></RelativeLayout>
-    <ImageView
-        android:id="@+id/downArrow1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@mipmap/arrow_down"
-        android:layout_marginLeft="30dp"
-        android:onClick="showContentOfBox1"
-        android:layout_marginTop="16dp"></ImageView>
-
-
-        <RelativeLayout
-            android:id="@+id/box1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/containter_background"
+            android:layout_marginBottom="10dp"
             android:onClick="openBox1"
-            android:padding="16dp">
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"></RelativeLayout>
+            <ImageView
+                android:id="@+id/downArrow1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/arrow_down"
+                android:layout_marginLeft="30dp"
+                android:onClick="showContentOfBox1"
+                android:layout_marginTop="16dp"></ImageView>
+
+
+            <RelativeLayout
+                android:id="@+id/box1"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/containter_background"
+                android:onClick="openBox1"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/containterImage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/box"></ImageView>
+
+                <TextView
+                    android:id="@+id/containterName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/containterImage1"
+                    android:text="Kutija 1"
+                    android:textColor="@color/black"></TextView>
+
+                <ImageView
+                    android:id="@+id/cross1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_toRightOf="@+id/containterName1"
+                    android:src="@mipmap/cross"
+                    android:visibility="visible"></ImageView>
+
+                <ImageView
+                    android:id="@+id/check1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="75dp"
+                    android:layout_toRightOf="@+id/containterName1"
+                    android:src="@mipmap/check"
+                    android:visibility="gone"></ImageView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/content1"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/box1"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/containter_background"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/contentShape1"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Oblik:"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:id="@+id/contentColor1"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contentShape1"
+                    android:layout_marginBottom="10dp"
+                    android:text="Boja:"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:id="@+id/contentWeight1"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contentColor1"
+                    android:layout_marginBottom="10dp"
+                    android:text="Masa:"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:id="@+id/contentShape1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/contentShape1"
+                    android:text="Kocka"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:id="@+id/contentColor1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contentShape1_1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/contentColor1"
+                    android:text="Plava"
+                    android:textColor="@color/black"></TextView>
+
+                <TextView
+                    android:id="@+id/contentWeight1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/contentColor1_1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toRightOf="@+id/contentWeight1"
+                    android:text="100g-200g"
+                    android:textColor="@color/black"></TextView>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/containterTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:onClick="openBox1"
+            android:layout_below="@+id/containterOne"
+
+            >
 
             <ImageView
-                android:id="@+id/containterImage1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/box"></ImageView>
+                android:id="@+id/downArrow2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/arrow_down"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="16dp"
+                android:onClick="showContentOfBox2"></ImageView>
 
-            <TextView
-                android:id="@+id/containterName1"
-                android:layout_width="wrap_content"
+
+            <RelativeLayout
+                android:id="@+id/box2"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/containterImage1"
-                android:text="Kutija 1"
-                android:textColor="@color/black"></TextView>
+                android:layout_centerHorizontal="true"
+                android:padding="16dp"
+                android:background="@drawable/containter_background"
+                android:onClick="openBox2">
+
+                <ImageView
+                    android:id="@+id/containterImage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/box">
+                </ImageView>
+                <TextView
+                    android:id="@+id/containterName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kutija 2"
+                    android:layout_toRightOf="@+id/containterImage2"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"></TextView>
+
+                <ImageView
+                    android:id="@+id/cross2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/cross"
+                    android:layout_toRightOf="@+id/containterName2"
+                    android:layout_marginLeft="75dp"
+                    android:visibility="visible"></ImageView>
+                <ImageView
+                    android:id="@+id/check2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/check"
+                    android:layout_toRightOf="@+id/containterName2"
+                    android:layout_marginLeft="75dp"
+                    android:visibility="gone"></ImageView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/content2"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/box2"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:background="@drawable/containter_background"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/contentShape2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Oblik:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentColor2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Boja:"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/contentShape2"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentWeight2"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Masa:"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/contentColor2"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentShape2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Piramida"
+                    android:textColor="@color/black"
+                    android:layout_toRightOf="@+id/contentShape2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentColor2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crvena"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/contentShape2_2"
+                    android:layout_toRightOf="@+id/contentColor2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentWeight2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50g-100g"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/contentColor2_2"
+                    android:layout_toRightOf="@+id/contentWeight2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"></TextView>
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/containterThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:onClick="openBox1"
+            android:layout_below="@id/containterTwo"
+            >
 
             <ImageView
-                android:id="@+id/cross1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
-                android:layout_toRightOf="@+id/containterName1"
-                android:src="@mipmap/cross"
-                android:visibility="visible"></ImageView>
+                android:id="@+id/downArrow3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/arrow_down"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="30dp"
+                android:onClick="showContentOfBox3"></ImageView>
 
-            <ImageView
-                android:id="@+id/check1"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:id="@+id/box3"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="75dp"
-                android:layout_toRightOf="@+id/containterName1"
-                android:src="@mipmap/check"
-                android:visibility="gone"></ImageView>
+                android:layout_centerHorizontal="true"
+                android:padding="16dp"
+                android:background="@drawable/containter_background"
+                android:onClick="openBox3">
 
+                <ImageView
+                    android:id="@+id/containterImage3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/box">
+                </ImageView>
+                <TextView
+                    android:id="@+id/containterName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kutija 3"
+                    android:layout_toRightOf="@+id/containterImage3"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/black"></TextView>
+
+                <ImageView
+                    android:id="@+id/cross3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/cross"
+                    android:layout_toRightOf="@+id/containterName3"
+                    android:layout_marginLeft="75dp"
+                    android:visibility="visible"></ImageView>
+                <ImageView
+                    android:id="@+id/check3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/check"
+                    android:layout_toRightOf="@+id/containterName3"
+                    android:layout_marginLeft="75dp"
+                    android:visibility="gone"></ImageView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/content3"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/box3"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:background="@drawable/containter_background"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/contentShape3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Oblik:"
+                    android:textColor="@color/black"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentColor3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Boja:"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/contentShape3"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentWeight3"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:text="Masa:"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/contentColor3"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentShape3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kugla"
+                    android:textColor="@color/black"
+                    android:layout_toRightOf="@+id/contentShape3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentColor3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Žuta,Ljubičasta"
+                    android:textColor="@color/black"
+                    android:layout_below="@+id/contentShape3_3"
+                    android:layout_toRightOf="@+id/contentColor3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"></TextView>
+
+                <TextView
+                    android:id="@+id/contentWeight3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="200g-500g"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/contentColor3_3"
+                    android:layout_toRightOf="@+id/contentWeight3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"></TextView>
+            </RelativeLayout>
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/content1"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/box1"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/containter_background"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/contentShape1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Oblik:"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:id="@+id/contentColor1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/contentShape1"
-                android:layout_marginBottom="10dp"
-                android:text="Boja:"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:id="@+id/contentWeight1"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/contentColor1"
-                android:layout_marginBottom="10dp"
-                android:text="Masa:"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:id="@+id/contentShape1_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_toRightOf="@+id/contentShape1"
-                android:text="Kocka"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:id="@+id/contentColor1_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/contentShape1_1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_toRightOf="@+id/contentColor1"
-                android:text="Plava"
-                android:textColor="@color/black"></TextView>
-
-            <TextView
-                android:id="@+id/contentWeight1_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/contentColor1_1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_toRightOf="@+id/contentWeight1"
-                android:text="100g-200g"
-                android:textColor="@color/black"></TextView>
-        </RelativeLayout>
     </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:id="@+id/containterTwo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="openBox1"
-        android:layout_below="@+id/containterOne"
-
-        >
-
-        <ImageView
-            android:id="@+id/downArrow2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/arrow_down"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="16dp"
-            android:onClick="showContentOfBox2"></ImageView>
-
-
-        <RelativeLayout
-        android:id="@+id/box2"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        android:background="@drawable/containter_background"
-        android:onClick="openBox2">
-
-        <ImageView
-            android:id="@+id/containterImage2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/box">
-        </ImageView>
-        <TextView
-            android:id="@+id/containterName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kutija 2"
-            android:layout_toRightOf="@+id/containterImage2"
-            android:layout_centerVertical="true"
-            android:textColor="@color/black"></TextView>
-
-        <ImageView
-            android:id="@+id/cross2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/cross"
-            android:layout_toRightOf="@+id/containterName2"
-            android:layout_marginLeft="75dp"
-            android:visibility="visible"></ImageView>
-        <ImageView
-            android:id="@+id/check2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/check"
-            android:layout_toRightOf="@+id/containterName2"
-            android:layout_marginLeft="75dp"
-            android:visibility="gone"></ImageView>
-    </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/content2"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/box2"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:background="@drawable/containter_background"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/contentShape2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="Oblik:"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentColor2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="Boja:"
-                android:textColor="@color/black"
-                android:layout_below="@+id/contentShape2"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentWeight2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="Masa:"
-                android:textColor="@color/black"
-                android:layout_below="@id/contentColor2"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentShape2_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Piramida"
-                android:textColor="@color/black"
-                android:layout_toRightOf="@+id/contentShape2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentColor2_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Crvena"
-                android:textColor="@color/black"
-                android:layout_below="@+id/contentShape2_2"
-                android:layout_toRightOf="@+id/contentColor2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentWeight2_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="50g-100g"
-                android:textColor="@color/black"
-                android:layout_below="@id/contentColor2_2"
-                android:layout_toRightOf="@+id/contentWeight2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"></TextView>
-        </RelativeLayout>
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:id="@+id/containterThree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:onClick="openBox1"
-        android:layout_below="@id/containterTwo"
-        >
-
-        <ImageView
-            android:id="@+id/downArrow3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/arrow_down"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="30dp"
-            android:onClick="showContentOfBox3"></ImageView>
-
-    <RelativeLayout
-        android:id="@+id/box3"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        android:background="@drawable/containter_background"
-        android:onClick="openBox3">
-
-        <ImageView
-            android:id="@+id/containterImage3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/box">
-        </ImageView>
-        <TextView
-            android:id="@+id/containterName3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Kutija 3"
-            android:layout_toRightOf="@+id/containterImage3"
-            android:layout_centerVertical="true"
-            android:textColor="@color/black"></TextView>
-
-        <ImageView
-            android:id="@+id/cross3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/cross"
-            android:layout_toRightOf="@+id/containterName3"
-            android:layout_marginLeft="75dp"
-            android:visibility="visible"></ImageView>
-        <ImageView
-            android:id="@+id/check3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/check"
-            android:layout_toRightOf="@+id/containterName3"
-            android:layout_marginLeft="75dp"
-            android:visibility="gone"></ImageView>
-    </RelativeLayout>
-        <RelativeLayout
-            android:id="@+id/content3"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/box3"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:background="@drawable/containter_background"
-            android:visibility="gone">
-
-            <TextView
-                android:id="@+id/contentShape3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="Oblik:"
-                android:textColor="@color/black"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentColor3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="Boja:"
-                android:textColor="@color/black"
-                android:layout_below="@+id/contentShape3"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentWeight3"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:text="Masa:"
-                android:textColor="@color/black"
-                android:layout_below="@id/contentColor3"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentShape3_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Kugla"
-                android:textColor="@color/black"
-                android:layout_toRightOf="@+id/contentShape3"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentColor3_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Žuta,Ljubičasta"
-                android:textColor="@color/black"
-                android:layout_below="@+id/contentShape3_3"
-                android:layout_toRightOf="@+id/contentColor3"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"></TextView>
-
-            <TextView
-                android:id="@+id/contentWeight3_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="200g-500g"
-                android:textColor="@color/black"
-                android:layout_below="@id/contentColor3_3"
-                android:layout_toRightOf="@+id/contentWeight3"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"></TextView>
-        </RelativeLayout>
-    </RelativeLayout>
-
-</RelativeLayout>
 
     <!--
     <TextView
