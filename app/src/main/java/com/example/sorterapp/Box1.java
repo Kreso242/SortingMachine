@@ -32,7 +32,10 @@ public class Box1 extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
 
         Intent intent=getIntent();
-        bluetoothData=bluetoothData+intent.getStringExtra("bluetoothData");
+        bluetoothData=intent.getStringExtra("bluetoothData");
+
+        if(bluetoothData==null)
+            bluetoothData="";
 
         shapeSpinner=findViewById(R.id.shapeSpinner1);
         colorSpinner=findViewById(R.id.colorSpinner1);
@@ -72,10 +75,14 @@ public class Box1 extends AppCompatActivity {
             else
                 dataBox1 ="B1/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
-            bluetoothData=bluetoothData+dataBox1;
+            if(bluetoothData.equals(""))
+                bluetoothData=dataBox1+bluetoothData;
+            else
+                bluetoothData=dataBox1+"&"+bluetoothData;
+
 
             Intent intent = new Intent(Box1.this, MenuActivity.class);
-            intent.putExtra("box1Data", bluetoothData);
+            intent.putExtra("bluetoothData", bluetoothData);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

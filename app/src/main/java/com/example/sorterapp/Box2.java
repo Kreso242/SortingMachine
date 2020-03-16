@@ -32,7 +32,10 @@ public class Box2 extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
 
         Intent intent=getIntent();
-        bluetoothData=bluetoothData+intent.getStringExtra("bluetoothData");
+        bluetoothData=intent.getStringExtra("bluetoothData");
+
+        if(bluetoothData==null)
+            bluetoothData="";
 
         shapeSpinner=findViewById(R.id.shapeSpinner2);
         colorSpinner=findViewById(R.id.colorSpinner2);
@@ -55,27 +58,37 @@ public class Box2 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Unesi maksimalnu masu!", Toast.LENGTH_SHORT).show();
         else {
             if (shape && color && maxWeightBool)
-                dataBox2 = "&B2/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox2 = "B2/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (!shape && color && maxWeightBool)
-                dataBox2 = "&B2/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox2 = "B2/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (shape && !color && maxWeightBool)
-                dataBox2 = "&B2/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox2 = "B2/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (shape && color && !maxWeightBool)
-                dataBox2 = "&B2/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
+                dataBox2 = "B2/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
             else if (!shape && !color && maxWeightBool)
-                dataBox2 = "&B2/"+"X" + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox2 = "B2/"+"X" + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (!shape && color && !maxWeightBool)
-                dataBox2 = "&B2/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
+                dataBox2 = "B2/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
             else if (shape && !color && !maxWeightBool)
-                dataBox2 = "&B2/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X" + "/" + "X";
+                dataBox2 = "B2/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X" + "/" + "X";
             else
-                dataBox2 ="&B2/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
+                dataBox2 ="B2/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
-            bluetoothData=bluetoothData+dataBox2;
+            if(bluetoothData.contains("B1") && !bluetoothData.contains("B3"))
+                bluetoothData=bluetoothData+"&"+dataBox2;
+            else if(!bluetoothData.contains("B1") && bluetoothData.contains("B3"))
+                bluetoothData=dataBox2+"&"+bluetoothData;
+            else if(bluetoothData.contains("B1") && bluetoothData.contains("B3")){
+                String box1=bluetoothData.split("&")[0];
+                String box3=bluetoothData.split("&")[1];
+                bluetoothData=box1+"&"+dataBox2+"&"+box3;
+            }
+            else
+                bluetoothData=dataBox2;
 
 
             Intent intent = new Intent(Box2.this, MenuActivity.class);
-            intent.putExtra("box2Data", bluetoothData);
+            intent.putExtra("bluetoothData", bluetoothData);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

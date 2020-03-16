@@ -33,7 +33,10 @@ public class Box3 extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
 
         Intent intent=getIntent();
-        bluetoothData=bluetoothData+intent.getStringExtra("bluetoothData");
+        bluetoothData=intent.getStringExtra("bluetoothData");
+
+        if(bluetoothData==null)
+            bluetoothData="";
 
         shapeSpinner=findViewById(R.id.shapeSpinner3);
         colorSpinner=findViewById(R.id.colorSpinner3);
@@ -56,27 +59,30 @@ public class Box3 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Unesi maksimalnu masu!", Toast.LENGTH_SHORT).show();
         else {
             if (shape && color && maxWeightBool)
-                dataBox3 = "&B3/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox3 = "B3/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (!shape && color && maxWeightBool)
-                dataBox3 = "&B3/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox3 = "B3/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (shape && !color && maxWeightBool)
-                dataBox3 = "&B3/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox3 = "B3/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (shape && color && !maxWeightBool)
-                dataBox3 = "&B3/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
+                dataBox3 = "B3/"+shapeSpinner.getSelectedItem().toString() + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
             else if (!shape && !color && maxWeightBool)
-                dataBox3 = "&B3/"+"X" + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
+                dataBox3 = "B3/"+"X" + "/" + "X" + "/" + minWeight.getText() + "/" + maxWeight.getText();
             else if (!shape && color && !maxWeightBool)
-                dataBox3 = "&B3/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
+                dataBox3 = "B3/"+"X" + "/" + colorSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X";
             else if (shape && !color && !maxWeightBool)
-                dataBox3 = "&B3/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X" + "/" + "X";
+                dataBox3 = "B3/"+shapeSpinner.getSelectedItem().toString() + "/" + "X" + "/" + "X" + "/" + "X";
             else
-                dataBox3 ="&B3/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
+                dataBox3 ="B3/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
-            bluetoothData=bluetoothData+dataBox3;
+            if(bluetoothData.equals(""))
+                bluetoothData=bluetoothData+dataBox3;
+            else
+                bluetoothData=bluetoothData+"&"+dataBox3;
 
 
             Intent intent = new Intent(Box3.this, MenuActivity.class);
-            intent.putExtra("box3Data", bluetoothData);
+            intent.putExtra("bluetoothData", bluetoothData);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

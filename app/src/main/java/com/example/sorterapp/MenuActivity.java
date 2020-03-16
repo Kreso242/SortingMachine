@@ -70,12 +70,14 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
-
+/*
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!btAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
+
+ */
         content1=findViewById(R.id.content1);
         content2=findViewById(R.id.content2);
         content3=findViewById(R.id.content3);
@@ -130,54 +132,17 @@ public class MenuActivity extends AppCompatActivity {
 
     private void getBoxData() {
         Intent intent=getIntent();
-        String dataBox1=intent.getStringExtra("box1Data");
-        String dataBox2=intent.getStringExtra("box2Data");
-        String dataBox3=intent.getStringExtra("box3Data");
-
-
-        if(dataBox1==null && dataBox2==null && dataBox3!=null) {
-            dataBox1="";
-            dataBox2="";
-            if(!bluetoothData.isEmpty()){
-                bluetoothData=bluetoothData+"&"+dataBox3;
-            }
-            else
-                bluetoothData=dataBox3;
-
-        }
-        else if(dataBox1==null && dataBox2!=null && dataBox3==null) {
-            dataBox1="";
-            dataBox3="";
-            if(!bluetoothData.isEmpty()){
-                if(bluetoothData.contains("B1") && !bluetoothData.contains("B3")){
-                    bluetoothData=bluetoothData+"&"+dataBox2;
-                }
-                else if(!bluetoothData.contains("B1") && bluetoothData.contains("B3")){
-                    bluetoothData=dataBox2+"&"+bluetoothData;
-                }
-                else if(bluetoothData.contains("B1") && bluetoothData.contains("B3")){
-                    String box1=bluetoothData.split("&")[0];
-                    String box3=bluetoothData.split("&")[1];
-                    bluetoothData=box1+"&"+dataBox2+"&"+box3;
-                }
-            }
-            else
-                bluetoothData=dataBox2;
-        }
-        else if(dataBox1!=null && dataBox2==null && dataBox3==null) {
-            dataBox2="";
-            dataBox3="";
-            if(!bluetoothData.isEmpty()){
-                bluetoothData=dataBox1+"&"+bluetoothData;
-            }
-            else
-                bluetoothData=dataBox1;
-        }
-        else
-            bluetoothData="";
+        bluetoothData=intent.getStringExtra("bluetoothData");
 
         Toast.makeText(getApplicationContext(),bluetoothData,Toast.LENGTH_SHORT).show();
 
+    }
+
+    public void sort(View view) {
+        Intent intent = new Intent(MenuActivity.this, Bluetooth.class);
+        intent.putExtra("bluetoothData",bluetoothData);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
 
@@ -453,10 +418,5 @@ public class MenuActivity extends AppCompatActivity {
         }
     }
 
-    public void sort(View view) {
-        Intent intent = new Intent(MenuActivity.this, Bluetooth.class);
-        intent.putExtra("bluetoothData",bluetoothData);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
+
 }
