@@ -70,14 +70,15 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
-/*
+
+        ((cBaseApplication)this.getApplicationContext()).bluetooth.Connect();
+
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!btAdapter.isEnabled()) {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
 
- */
         content1=findViewById(R.id.content1);
         content2=findViewById(R.id.content2);
         content3=findViewById(R.id.content3);

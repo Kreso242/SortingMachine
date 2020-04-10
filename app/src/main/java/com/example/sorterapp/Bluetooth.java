@@ -4,6 +4,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,11 +21,17 @@ public class Bluetooth extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Connect();
 
+        Intent intentBack = new Intent(Bluetooth.this, MenuActivity.class);
+        startActivity(intentBack);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
+    public void Connect() {
         Intent intent=getIntent();
         String bluetoothData=intent.getStringExtra("bluetoothData");
-        bluetoothData=bluetoothData+"+";
-
+        bluetoothData=bluetoothData+"+"+"\r"+"\n";
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         System.out.println(btAdapter.getBondedDevices());
@@ -62,9 +69,5 @@ public class Bluetooth extends AppCompatActivity {
             e.printStackTrace();
         }
          */
-
-        Intent intentBack = new Intent(Bluetooth.this, MenuActivity.class);
-        startActivity(intentBack);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }
