@@ -21,14 +21,6 @@ public class Bluetooth extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Connect();
-
-        Intent intentBack = new Intent(Bluetooth.this, MenuActivity.class);
-        startActivity(intentBack);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-    }
-
-    public void Connect() {
         Intent intent=getIntent();
         String bluetoothData=intent.getStringExtra("bluetoothData");
         bluetoothData=bluetoothData+"+"+"\r"+"\n";
@@ -69,5 +61,10 @@ public class Bluetooth extends AppCompatActivity {
             e.printStackTrace();
         }
          */
+
+        Intent intentBack = new Intent(Bluetooth.this, MenuActivity.class);
+        startActivity(intentBack);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
+
 }

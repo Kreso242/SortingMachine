@@ -71,7 +71,6 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         Objects.requireNonNull(getSupportActionBar()).hide(); //hide app name bar
 
-        ((cBaseApplication)this.getApplicationContext()).bluetooth.Connect();
 
         BluetoothAdapter btAdapter = BluetoothAdapter.getDefaultAdapter();
         if (!btAdapter.isEnabled()) {

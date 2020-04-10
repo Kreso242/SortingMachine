@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/start_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".cBaseApplication">
+        >
         <activity android:name=".Bluetooth"></activity>
         <activity android:name=".Box3" />
         <activity android:name=".Box2" />
