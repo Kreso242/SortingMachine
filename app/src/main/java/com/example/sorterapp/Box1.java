@@ -22,7 +22,7 @@ public class Box1 extends AppCompatActivity {
     private EditText maxWeight;
     private Button save;
     private String bluetoothData="";
-
+    private String flag="";
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
@@ -33,6 +33,7 @@ public class Box1 extends AppCompatActivity {
 
         Intent intent=getIntent();
         bluetoothData=intent.getStringExtra("bluetoothData");
+        flag=intent.getStringExtra("flag");
 
         if(bluetoothData==null)
             bluetoothData="";
@@ -77,12 +78,39 @@ public class Box1 extends AppCompatActivity {
 
             if(bluetoothData.equals(""))
                 bluetoothData=dataBox1+bluetoothData;
-            else
+            else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B1
+                bluetoothData=dataBox1;
+            else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3"))  // B1 i B2
+                bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1];
+            else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1,B2,B3
+                bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1]+"&"+bluetoothData.split("&")[2];
+            else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B2
                 bluetoothData=dataBox1+"&"+bluetoothData;
+            else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3"))  // B2 i B3
+                bluetoothData=dataBox1+"&"+bluetoothData;
+            else if (!bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //samo B3
+                bluetoothData=dataBox1+"&"+bluetoothData;
+            else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1 i B3
+                bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1];
+
+
+
+
+            else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3"))
+                bluetoothData=dataBox1;
+            else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3"))
+                bluetoothData=dataBox1;
+            else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3"))
+                bluetoothData=dataBox1;
+            else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3"))
+                bluetoothData=dataBox1;
+
+
 
 
             Intent intent = new Intent(Box1.this, MenuActivity.class);
             intent.putExtra("bluetoothData", bluetoothData);
+            intent.putExtra("flag", flag);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         }

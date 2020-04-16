@@ -62,6 +62,8 @@ public class MenuActivity extends AppCompatActivity {
     private TextView contentWeight3_3;
 
     private String bluetoothData="";
+    private String flag="1";
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -77,6 +79,11 @@ public class MenuActivity extends AppCompatActivity {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, 1);
         }
+
+        Intent intent=getIntent();
+        flag=intent.getStringExtra("flag");
+        if(flag==null)
+            flag="1";
 
         content1=findViewById(R.id.content1);
         content2=findViewById(R.id.content2);
@@ -133,38 +140,160 @@ public class MenuActivity extends AppCompatActivity {
     private void getBoxData() {
         Intent intent=getIntent();
         bluetoothData=intent.getStringExtra("bluetoothData");
+        int br=0;
+        int countB1=0;
+        int countB2=0;
+        int countB3=0;
+        if(bluetoothData!=null) {
 
+                if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3")) {
+                    contentShape1_1.setText(bluetoothData.split("/")[1]);
+                    contentColor1_1.setText(bluetoothData.split("/")[2]);
+                    contentWeight1_1.setText((bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g").replaceAll("&B2", ""));
+
+                    contentShape2_2.setText("X");
+                    contentColor2_2.setText("X");
+                    contentWeight2_2.setText("Xg - Xg");
+                    contentShape3_3.setText("X");
+                    contentColor3_3.setText("X");
+                    contentWeight3_3.setText("Xg - Xg");
+
+
+                } else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3")) {
+                    contentShape1_1.setText(bluetoothData.split("/")[1]);
+                    contentColor1_1.setText(bluetoothData.split("/")[2]);
+                    contentWeight1_1.setText((bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g").replaceAll("&B2", ""));
+                    contentShape2_2.setText(bluetoothData.split("/")[5]);
+                    contentColor2_2.setText(bluetoothData.split("/")[6]);
+                    contentWeight2_2.setText((bluetoothData.split("/")[7] + "g - " + bluetoothData.split("/")[8] + "g").replaceAll("&B3", ""));
+
+                    contentShape3_3.setText("X");
+                    contentColor3_3.setText("X");
+                    contentWeight3_3.setText("Xg - Xg");
+
+
+                } else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) {
+                    contentShape1_1.setText(bluetoothData.split("/")[1]);
+                    contentColor1_1.setText(bluetoothData.split("/")[2]);
+                    contentWeight1_1.setText((bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g").replaceAll("&B2", ""));
+
+                    contentShape2_2.setText("X");
+                    contentColor2_2.setText("X");
+                    contentWeight2_2.setText("Xg - Xg");
+
+                    contentShape3_3.setText(bluetoothData.split("/")[5]);
+                    contentColor3_3.setText(bluetoothData.split("/")[6]);
+                    contentWeight3_3.setText(bluetoothData.split("/")[7] + "g - " + bluetoothData.split("/")[8] + "g");
+
+
+                } else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3")) {
+                    contentShape1_1.setText(bluetoothData.split("/")[1]);
+                    contentColor1_1.setText(bluetoothData.split("/")[2]);
+                    contentWeight1_1.setText((bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g").replaceAll("&B2", ""));
+                    contentShape2_2.setText(bluetoothData.split("/")[5]);
+                    contentColor2_2.setText(bluetoothData.split("/")[6]);
+                    contentWeight2_2.setText((bluetoothData.split("/")[7] + "g - " + bluetoothData.split("/")[8] + "g").replaceAll("&B3", ""));
+                    contentShape3_3.setText(bluetoothData.split("/")[9]);
+                    contentColor3_3.setText(bluetoothData.split("/")[10]);
+                    contentWeight3_3.setText(bluetoothData.split("/")[11] + "g - " + bluetoothData.split("/")[12] + "g");
+
+
+                } else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3")) {
+                    contentShape1_1.setText("X");
+                    contentColor1_1.setText("X");
+                    contentWeight1_1.setText("Xg - Xg");
+
+                    contentShape2_2.setText(bluetoothData.split("/")[1]);
+                    contentColor2_2.setText(bluetoothData.split("/")[2]);
+                    contentWeight2_2.setText((bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g").replaceAll("&B3", ""));
+
+                    contentShape3_3.setText("X");
+                    contentColor3_3.setText("X");
+                    contentWeight3_3.setText("Xg - Xg");
+
+
+                } else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3")) {
+                    contentShape1_1.setText("X");
+                    contentColor1_1.setText("X");
+                    contentWeight1_1.setText("Xg - Xg");
+
+                    contentShape2_2.setText(bluetoothData.split("/")[1]);
+                    contentColor2_2.setText(bluetoothData.split("/")[2]);
+                    contentWeight2_2.setText((bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g").replaceAll("&B3", ""));
+                    contentShape3_3.setText(bluetoothData.split("/")[5]);
+                    contentColor3_3.setText(bluetoothData.split("/")[6]);
+                    contentWeight3_3.setText(bluetoothData.split("/")[7] + "g - " + bluetoothData.split("/")[8] + "g");
+
+                } else if (!bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) {
+                    contentShape1_1.setText("X");
+                    contentColor1_1.setText("X");
+                    contentWeight1_1.setText("Xg - Xg");
+                    contentShape2_2.setText("X");
+                    contentColor2_2.setText("X");
+                    contentWeight2_2.setText("Xg - Xg");
+
+                    contentShape3_3.setText(bluetoothData.split("/")[1]);
+                    contentColor3_3.setText(bluetoothData.split("/")[2]);
+                    contentWeight3_3.setText(bluetoothData.split("/")[3] + "g - " + bluetoothData.split("/")[4] + "g");
+
+                }
+
+                if(!contentShape1_1.getText().equals("X") || !contentColor1_1.getText().equals("X") || !contentWeight1_1.getText().equals("Xg - Xg")) {
+                    cross1.setVisibility(View.GONE);
+                    check1.setVisibility(View.VISIBLE);
+                }
+                if(!contentShape2_2.getText().equals("X") || !contentColor2_2.getText().equals("X") || !contentWeight2_2.getText().equals("Xg - Xg")) {
+                    cross2.setVisibility(View.GONE);
+                    check2.setVisibility(View.VISIBLE);
+                }
+                if(!contentShape3_3.getText().equals("X") || !contentColor3_3.getText().equals("X") || !contentWeight3_3.getText().equals("Xg - Xg")) {
+                    cross3.setVisibility(View.GONE);
+                    check3.setVisibility(View.VISIBLE);
+                }
+
+        }
         Toast.makeText(getApplicationContext(),bluetoothData,Toast.LENGTH_SHORT).show();
 
     }
 
     public void sort(View view) {
-        Intent intent = new Intent(MenuActivity.this, Bluetooth.class);
-        intent.putExtra("bluetoothData",bluetoothData);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        if(contentShape1_1.getText().equals("X") && contentColor1_1.getText().equals("X") && contentWeight1_1.getText().equals("Xg - Xg") &&
+           contentShape2_2.getText().equals("X") && contentColor2_2.getText().equals("X") && contentWeight2_2.getText().equals("Xg - Xg") &&
+           contentShape3_3.getText().equals("X") && contentColor3_3.getText().equals("X") && contentWeight3_3.getText().equals("Xg - Xg"))
+        {
+            Toast.makeText(getApplicationContext(),"Niste unijeli podatke za sortiranje!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Intent intent = new Intent(MenuActivity.this, Bluetooth.class);
+            intent.putExtra("bluetoothData", bluetoothData);
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        }
     }
 
 
     public void openBox3(View view) {
         Intent intent = new Intent(MenuActivity.this, Box3.class);
-        intent.putExtra("bluetoothData",bluetoothData);
+        intent.putExtra("bluetoothData", bluetoothData);
+        intent.putExtra("flag", flag);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void openBox2(View view) {
         Intent intent = new Intent(MenuActivity.this, Box2.class);
-        intent.putExtra("bluetoothData",bluetoothData);
+        intent.putExtra("bluetoothData", bluetoothData);
+        intent.putExtra("flag", flag);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     public void openBox1(View view) {
-        Intent intent = new Intent(MenuActivity.this, Box1.class);
-        intent.putExtra("bluetoothData",bluetoothData);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+            Intent intent = new Intent(MenuActivity.this, Box1.class);
+            intent.putExtra("bluetoothData", bluetoothData);
+            intent.putExtra("flag", flag);
+            startActivity(intent);
+            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

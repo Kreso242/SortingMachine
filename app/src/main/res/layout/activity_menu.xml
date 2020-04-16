@@ -142,7 +142,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toRightOf="@+id/contentShape1"
-                    android:text="Kocka"
+                    android:text="X"
                     android:textColor="@color/black"></TextView>
 
                 <TextView
@@ -153,7 +153,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toRightOf="@+id/contentColor1"
-                    android:text="Plava"
+                    android:text="X"
                     android:textColor="@color/black"></TextView>
 
                 <TextView
@@ -164,7 +164,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_toRightOf="@+id/contentWeight1"
-                    android:text="100g-200g"
+                    android:text="Xg - Xg"
                     android:textColor="@color/black"></TextView>
             </RelativeLayout>
         </RelativeLayout>
@@ -273,7 +273,7 @@
                     android:id="@+id/contentShape2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Piramida"
+                    android:text="X"
                     android:textColor="@color/black"
                     android:layout_toRightOf="@+id/contentShape2"
                     android:layout_marginLeft="10dp"
@@ -283,7 +283,7 @@
                     android:id="@+id/contentColor2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crvena"
+                    android:text="X"
                     android:textColor="@color/black"
                     android:layout_below="@+id/contentShape2_2"
                     android:layout_toRightOf="@+id/contentColor2"
@@ -294,7 +294,7 @@
                     android:id="@+id/contentWeight2_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="50g-100g"
+                    android:text="Xg - Xg"
                     android:textColor="@color/black"
                     android:layout_below="@id/contentColor2_2"
                     android:layout_toRightOf="@+id/contentWeight2"
@@ -405,7 +405,7 @@
                     android:id="@+id/contentShape3_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Kugla"
+                    android:text="X"
                     android:textColor="@color/black"
                     android:layout_toRightOf="@+id/contentShape3"
                     android:layout_marginLeft="10dp"
@@ -415,7 +415,7 @@
                     android:id="@+id/contentColor3_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Žuta,Ljubičasta"
+                    android:text="X"
                     android:textColor="@color/black"
                     android:layout_below="@+id/contentShape3_3"
                     android:layout_toRightOf="@+id/contentColor3"
@@ -426,7 +426,7 @@
                     android:id="@+id/contentWeight3_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200g-500g"
+                    android:text="Xg - Xg"
                     android:textColor="@color/black"
                     android:layout_below="@id/contentColor3_3"
                     android:layout_toRightOf="@+id/contentWeight3"
