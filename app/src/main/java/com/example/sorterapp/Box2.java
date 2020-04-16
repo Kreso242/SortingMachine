@@ -77,19 +77,19 @@ public class Box2 extends AppCompatActivity {
                 dataBox2 ="B2/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
             if(bluetoothData.equals(""))
-                bluetoothData=dataBox2;
+                bluetoothData="B1/X/X/X/X&"+dataBox2+"&B3/X/X/X/X";
             else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B1
-                bluetoothData=bluetoothData+"&"+dataBox2;
+                bluetoothData=bluetoothData+"&"+dataBox2+"&B3/X/X/X/X";
             else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3"))  // B1 i B2
-                bluetoothData=bluetoothData.split("&")[0]+"&"+dataBox2;
+                bluetoothData=bluetoothData.split("&")[0]+"&"+dataBox2+"&B3/X/X/X/X";
             else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1,B2,B3
                 bluetoothData=bluetoothData.split("&")[0]+"&"+dataBox2+"&"+bluetoothData.split("&")[2];
             else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B2
-                bluetoothData=dataBox2;
+                bluetoothData="B1/X/X/X/X&"+dataBox2+"&B3/X/X/X/X";
             else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3"))  // B2 i B3
-                bluetoothData=dataBox2+"&"+bluetoothData.split("&")[1];
+                bluetoothData="B1/X/X/X/X&"+dataBox2+"&"+bluetoothData.split("&")[1];
             else if (!bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //samo B3
-                bluetoothData=dataBox2+"&"+bluetoothData;
+                bluetoothData="B1/X/X/X/X&"+dataBox2+"&"+bluetoothData;
             else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1 i B3
                 bluetoothData=bluetoothData.split("&")[0]+"&"+dataBox2+"&"+bluetoothData.split("&")[1];
 

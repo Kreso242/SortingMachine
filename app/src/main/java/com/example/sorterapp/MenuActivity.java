@@ -252,6 +252,7 @@ public class MenuActivity extends AppCompatActivity {
                 }
 
         }
+
         Toast.makeText(getApplicationContext(),bluetoothData,Toast.LENGTH_SHORT).show();
 
     }

@@ -78,21 +78,21 @@ public class Box3 extends AppCompatActivity {
                 dataBox3 ="B3/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
             if(bluetoothData.equals(""))
-                bluetoothData=dataBox3;
+                bluetoothData="B1/X/X/X/X&"+"B2/X/X/X/X&"+dataBox3;
             else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B1
-                bluetoothData=bluetoothData.split("&")[0]+"&"+dataBox3;
+                bluetoothData=bluetoothData.split("&")[0]+"&"+"B2/X/X/X/X&"+dataBox3;
             else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3"))  // B1 i B2
                 bluetoothData=bluetoothData+"&"+dataBox3;
             else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1,B2,B3
                 bluetoothData=bluetoothData.split("&")[0]+"&"+bluetoothData.split("&")[1]+"&"+dataBox3;
             else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B2
-                bluetoothData=bluetoothData+"&"+dataBox3;
+                bluetoothData="B1/X/X/X/X&"+bluetoothData+"&"+dataBox3;
             else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3"))  // B2 i B3
-                bluetoothData=bluetoothData.split("&")[1]+"&"+dataBox3;
+                bluetoothData="B1/X/X/X/X&"+bluetoothData.split("&")[1]+"&"+dataBox3;
             else if (!bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //samo B3
-                bluetoothData=dataBox3;
+                bluetoothData="B1/X/X/X/X&"+"B2/X/X/X/X&"+dataBox3;
             else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1 i B3
-                bluetoothData=bluetoothData.split("&")[0]+"&"+dataBox3;
+                bluetoothData=bluetoothData.split("&")[0]+"&"+"B2/X/X/X/X&"+dataBox3;
 
 
 

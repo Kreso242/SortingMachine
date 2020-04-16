@@ -77,21 +77,21 @@ public class Box1 extends AppCompatActivity {
                 dataBox1 ="B1/"+"X"+ "/" + "X" + "/" + "X" + "/" + "X";
 
             if(bluetoothData.equals(""))
-                bluetoothData=dataBox1+bluetoothData;
+                bluetoothData=dataBox1+"&B2/X/X/X/X&B3/X/X/X/X";
             else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B1
-                bluetoothData=dataBox1;
+                bluetoothData=dataBox1+"&/B2/X/X/X/X&B3/X/X/X/X";
             else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3"))  // B1 i B2
-                bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1];
+                bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1]+"&B3/X/X/X/X";
             else if (bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1,B2,B3
                 bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1]+"&"+bluetoothData.split("&")[2];
             else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && !bluetoothData.contains("B3")) //samo B2
-                bluetoothData=dataBox1+"&"+bluetoothData;
+                bluetoothData=dataBox1+"&"+bluetoothData+"&B3/X/X/X/X";
             else if (!bluetoothData.contains("B1") && bluetoothData.contains("B2") && bluetoothData.contains("B3"))  // B2 i B3
                 bluetoothData=dataBox1+"&"+bluetoothData;
             else if (!bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //samo B3
-                bluetoothData=dataBox1+"&"+bluetoothData;
+                bluetoothData=dataBox1+"&B2/X/X/X/X"+"&"+bluetoothData;
             else if (bluetoothData.contains("B1") && !bluetoothData.contains("B2") && bluetoothData.contains("B3")) //B1 i B3
-                bluetoothData=dataBox1+"&"+bluetoothData.split("&")[1];
+                bluetoothData=dataBox1+"&B2/X/X/X/X"+"&"+bluetoothData.split("&")[1];
 
 
 

@@ -150,7 +150,13 @@
     </RelativeLayout>
     </RelativeLayout>
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save1"
+        android:text="*** Kutija će biti prazna ako je pohranite bez odgovora"
+        android:layout_centerHorizontal="true">
+    </TextView>
     <Button
             android:id="@+id/save1"
             android:layout_width="wrap_content"
