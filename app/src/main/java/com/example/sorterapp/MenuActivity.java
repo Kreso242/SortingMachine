@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class MenuActivity extends AppCompatActivity {
@@ -64,6 +66,17 @@ public class MenuActivity extends AppCompatActivity {
     private String bluetoothData="";
     private String flag="1";
 
+    private boolean jelMoze=true;
+    private List<Boolean> booleanList= new ArrayList<Boolean>();
+    private List<Boolean> weightBooleanList= new ArrayList<Boolean>();
+
+
+    public static List<String> box1List= new ArrayList<>();
+    public static List<String> box2List= new ArrayList<>();
+    public static List<String> box3List= new ArrayList<>();
+
+
+    private List<String> cantGo= new ArrayList<>();
 
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -80,62 +93,28 @@ public class MenuActivity extends AppCompatActivity {
             startActivityForResult(enableBtIntent, 1);
         }
 
+        booleanList.add(false);
+        booleanList.add(false);
+        booleanList.add(false);
+        weightBooleanList.add(false);
+        weightBooleanList.add(false);
+        weightBooleanList.add(false);
+
         Intent intent=getIntent();
         flag=intent.getStringExtra("flag");
+        box1List=intent.getStringArrayListExtra("box1List");
+        box2List=intent.getStringArrayListExtra("box2List");
+        box3List=intent.getStringArrayListExtra("box3List");
+
         if(flag==null)
             flag="1";
 
-        content1=findViewById(R.id.content1);
-        content2=findViewById(R.id.content2);
-        content3=findViewById(R.id.content3);
-
-        box1=findViewById(R.id.box1);
-        box2=findViewById(R.id.box2);
-        box3=findViewById(R.id.box3);
-
-        cross1=findViewById(R.id.cross1);
-        cross2=findViewById(R.id.cross2);
-        cross3=findViewById(R.id.cross3);
-
-        check1=findViewById(R.id.check1);
-        check2=findViewById(R.id.check2);
-        check3=findViewById(R.id.check3);
-
-        containterImage1=findViewById(R.id.containterImage1);
-        containterImage2=findViewById(R.id.containterImage2);
-        containterImage3=findViewById(R.id.containterImage3);
-
-        containterName1=findViewById(R.id.containterName1);
-        containterName2=findViewById(R.id.containterName2);
-        containterName3=findViewById(R.id.containterName3);
-
-        contentShape1=findViewById(R.id.contentShape1);
-        contentShape2=findViewById(R.id.contentShape2);
-        contentShape3=findViewById(R.id.contentShape3);
-
-        contentColor1=findViewById(R.id.contentColor1);
-        contentColor2=findViewById(R.id.contentColor2);
-        contentColor3=findViewById(R.id.contentColor3);
-
-        contentWeight1=findViewById(R.id.contentWeight1);
-        contentWeight2=findViewById(R.id.contentWeight2);
-        contentWeight3=findViewById(R.id.contentWeight3);
-
-        contentShape1_1=findViewById(R.id.contentShape1_1);
-        contentShape2_2=findViewById(R.id.contentShape2_2);
-        contentShape3_3=findViewById(R.id.contentShape3_3);
-
-        contentColor1_1=findViewById(R.id.contentColor1_1);
-        contentColor2_2=findViewById(R.id.contentColor2_2);
-        contentColor3_3=findViewById(R.id.contentColor3_3);
-
-        contentWeight1_1=findViewById(R.id.contentWeight1_1);
-        contentWeight2_2=findViewById(R.id.contentWeight2_2);
-        contentWeight3_3=findViewById(R.id.contentWeight3_3);
-
+        initialization();
         getBoxData();
 
     }
+
+
 
     private void getBoxData() {
         Intent intent=getIntent();
@@ -265,11 +244,121 @@ public class MenuActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Niste unijeli podatke za sortiranje!",Toast.LENGTH_SHORT).show();
         }
         else {
-            Intent intent = new Intent(MenuActivity.this, Bluetooth.class);
-            intent.putExtra("bluetoothData", bluetoothData);
-            startActivity(intent);
-            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+           checkLists();
+           if(!jelMoze){
+               if(cantGo.get(0).equals("1")) Toast.makeText(getApplicationContext(),"Promijeni kutiju: 1 !",Toast.LENGTH_SHORT).show();
+               else if(cantGo.get(0).equals("2")) Toast.makeText(getApplicationContext(),"Promijeni kutiju: 2 !",Toast.LENGTH_SHORT).show();
+               else if(cantGo.get(0).equals("3")) Toast.makeText(getApplicationContext(),"Promijeni kutiju: 3 !",Toast.LENGTH_SHORT).show();
+           }
+           else {
+               Intent intent = new Intent(MenuActivity.this, Bluetooth.class);
+               intent.putExtra("bluetoothData", bluetoothData);
+               startActivity(intent);
+               overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+           }
         }
+    }
+
+    private void checkLists() {
+        String manji1,veci1,manji2,veci2,manji3,veci3,prvi,drugi,treci;
+
+        if(box1List==null){
+            box1List=new ArrayList<String>();
+            box1List.add("X");
+            box1List.add("X");
+            box1List.add("Y-Y");
+        }
+        if(box2List==null){
+            box2List=new ArrayList<String>();
+            box2List.add("X");
+            box2List.add("X");
+            box2List.add("Y-Y");
+        }
+        if(box3List==null){
+            box3List=new ArrayList<String>();
+            box3List.add("X");
+            box3List.add("X");
+            box3List.add("Y-Y");
+        }
+
+        prvi=box1List.get(2);
+        manji1=prvi.split("-")[0];
+        veci1=prvi.split("-")[1];
+
+        drugi=box2List.get(2);
+        manji2=drugi.split("-")[0];
+        veci2=drugi.split("-")[1];
+
+        treci=box3List.get(2);
+        manji3=treci.split("-")[0];
+        veci3=treci.split("-")[1];
+
+        if(manji1.equals("X"))
+            manji1="0";
+        if(manji2.equals("X"))
+            manji2="0";
+        if(manji3.equals("X"))
+            manji3="0";
+        if(veci1.equals("X"))
+            veci1="500";
+        if(veci2.equals("X"))
+            veci2="500";
+        if(veci3.equals("X"))
+            veci3="500";
+
+        if(box1List.get(0).equals(box2List.get(0).toString()) && box1List.get(1).equals(box2List.get(1).toString()))
+            booleanList.set(0,true);
+        if(box1List.get(0).equals(box3List.get(0).toString()) && box1List.get(1).equals(box3List.get(1).toString()))
+            booleanList.set(1,true);
+        if(box2List.get(0).equals(box3List.get(0).toString()) && box2List.get(1).equals(box3List.get(1).toString()))
+            booleanList.set(2,true);
+
+        if(booleanList.get(0)){
+            if(!manji1.equals("Y") && !manji2.equals("Y")) {
+                if ((Integer.parseInt(manji1) <= Integer.parseInt(manji2)) && (Integer.parseInt(veci1) >= Integer.parseInt(veci2))) {
+                    weightBooleanList.set(1, true);
+                    jelMoze = false;
+                }
+                if ((Integer.parseInt(manji1) >= Integer.parseInt(manji2)) && (Integer.parseInt(veci1) <= Integer.parseInt(veci2))) {
+                    weightBooleanList.set(0, true);
+                    jelMoze = false;
+                }
+            }
+        }
+
+        if(booleanList.get(1)){
+            if(!manji1.equals("Y") && !manji3.equals("Y")) {
+                if ((Integer.parseInt(manji1) <= Integer.parseInt(manji3)) && (Integer.parseInt(veci1) >= Integer.parseInt(veci3))) {
+                    weightBooleanList.set(2, true);
+                    jelMoze = false;
+                }
+                if ((Integer.parseInt(manji1) >= Integer.parseInt(manji3)) && (Integer.parseInt(veci1) <= Integer.parseInt(veci3))) {
+                    weightBooleanList.set(0, true);
+                    jelMoze = false;
+                }
+            }
+        }
+
+        if(booleanList.get(2)){
+            if(!manji2.equals("Y") && !manji3.equals("Y")) {
+                if ((Integer.parseInt(manji2) <= Integer.parseInt(manji3)) && (Integer.parseInt(veci2) >= Integer.parseInt(veci3))) {
+                    weightBooleanList.set(2, true);
+                    jelMoze = false;
+                }
+                if ((Integer.parseInt(manji2) >= Integer.parseInt(manji3)) && (Integer.parseInt(veci2) <= Integer.parseInt(veci3))) {
+                    weightBooleanList.set(1, true);
+                    jelMoze = false;
+                }
+            }
+        }
+
+        if(weightBooleanList.get(0))
+            cantGo.add("1");
+        if(weightBooleanList.get(1))
+            cantGo.add("2");
+        if(weightBooleanList.get(2))
+            cantGo.add("3");
+
     }
 
 
@@ -277,6 +366,8 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(MenuActivity.this, Box3.class);
         intent.putExtra("bluetoothData", bluetoothData);
         intent.putExtra("flag", flag);
+        intent.putStringArrayListExtra("box1List", (ArrayList<String>) box1List);
+        intent.putStringArrayListExtra("box2List", (ArrayList<String>) box2List);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
@@ -285,6 +376,8 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(MenuActivity.this, Box2.class);
         intent.putExtra("bluetoothData", bluetoothData);
         intent.putExtra("flag", flag);
+        intent.putStringArrayListExtra("box1List", (ArrayList<String>) box1List);
+        intent.putStringArrayListExtra("box3List", (ArrayList<String>) box3List);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
@@ -293,6 +386,8 @@ public class MenuActivity extends AppCompatActivity {
             Intent intent = new Intent(MenuActivity.this, Box1.class);
             intent.putExtra("bluetoothData", bluetoothData);
             intent.putExtra("flag", flag);
+            intent.putStringArrayListExtra("box3List", (ArrayList<String>) box3List);
+            intent.putStringArrayListExtra("box2List", (ArrayList<String>) box2List);
             startActivity(intent);
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
@@ -546,6 +641,57 @@ public class MenuActivity extends AppCompatActivity {
             contentColor3_3.setTextColor(Color.parseColor("#000000"));
             contentWeight3_3.setTextColor(Color.parseColor("#000000"));
         }
+    }
+
+    private void initialization() {
+        content1=findViewById(R.id.content1);
+        content2=findViewById(R.id.content2);
+        content3=findViewById(R.id.content3);
+
+        box1=findViewById(R.id.box1);
+        box2=findViewById(R.id.box2);
+        box3=findViewById(R.id.box3);
+
+        cross1=findViewById(R.id.cross1);
+        cross2=findViewById(R.id.cross2);
+        cross3=findViewById(R.id.cross3);
+
+        check1=findViewById(R.id.check1);
+        check2=findViewById(R.id.check2);
+        check3=findViewById(R.id.check3);
+
+        containterImage1=findViewById(R.id.containterImage1);
+        containterImage2=findViewById(R.id.containterImage2);
+        containterImage3=findViewById(R.id.containterImage3);
+
+        containterName1=findViewById(R.id.containterName1);
+        containterName2=findViewById(R.id.containterName2);
+        containterName3=findViewById(R.id.containterName3);
+
+        contentShape1=findViewById(R.id.contentShape1);
+        contentShape2=findViewById(R.id.contentShape2);
+        contentShape3=findViewById(R.id.contentShape3);
+
+        contentColor1=findViewById(R.id.contentColor1);
+        contentColor2=findViewById(R.id.contentColor2);
+        contentColor3=findViewById(R.id.contentColor3);
+
+        contentWeight1=findViewById(R.id.contentWeight1);
+        contentWeight2=findViewById(R.id.contentWeight2);
+        contentWeight3=findViewById(R.id.contentWeight3);
+
+        contentShape1_1=findViewById(R.id.contentShape1_1);
+        contentShape2_2=findViewById(R.id.contentShape2_2);
+        contentShape3_3=findViewById(R.id.contentShape3_3);
+
+        contentColor1_1=findViewById(R.id.contentColor1_1);
+        contentColor2_2=findViewById(R.id.contentColor2_2);
+        contentColor3_3=findViewById(R.id.contentColor3_3);
+
+        contentWeight1_1=findViewById(R.id.contentWeight1_1);
+        contentWeight2_2=findViewById(R.id.contentWeight2_2);
+        contentWeight3_3=findViewById(R.id.contentWeight3_3);
+
     }
 
 
